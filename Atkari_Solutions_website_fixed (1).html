@@ -1,0 +1,2407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ATKARI SOLUTIONS | Business Solutions</title>
+<meta name="description" content="ATKARI SOLUTIONS provides practical business solutions including research, planning, digital setup, marketing, customer management and business problem solving." />
+<meta name="theme-color" content="#06111f" />
+<link rel="icon" href="https://pictureurl.com/api/storage/file?key=u%2Fanon%2F98331b45-1405-4768-b3f9-2b9628a28bc4-53665.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<style>
+/* ============================================================
+   ROOT
+   ============================================================ */
+:root{
+  --primary:#1683ff;
+  --primary-light:#4da3ff;
+  --light-blue:#7dd3fc;
+  --soft-blue:#60A5FA;
+  --deep-black:#050810;
+  --text-light:#f0f6ff;
+  --text-soft:#c8d6ea;
+  --text-red:#ff6b7a;
+  --glass-white:rgba(255,255,255,0.14);
+  --glass-border:rgba(255,255,255,0.32);
+  --radius:20px;
+  --radius-sm:14px;
+  --maxw:1320px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter','Segoe UI',sans-serif;
+  background:var(--deep-black);color:var(--text-light);
+  min-height:100vh;overflow-x:hidden;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5{font-family:'Poppins','Inter',sans-serif;line-height:1.25;font-weight:700}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+::selection{background:rgba(22,131,255,.4);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#040710}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#1683ff,#0a4b96);border-radius:10px}
+
+/* ============================================================
+   BACKGROUND
+   ============================================================ */
+.bg-video{
+  position:fixed;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:-3;
+  filter:brightness(.72) contrast(1.08);
+  pointer-events:none;
+}
+.bg-tint{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(135deg,
+    rgba(0,25,70,.95) 0%, rgba(0,70,200,.65) 30%,
+    rgba(0,150,255,.55) 55%, rgba(0,110,230,.65) 75%,
+    rgba(0,20,60,.95) 100%);
+  mix-blend-mode:color;
+}
+.bg-dark{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(0,120,255,.14), transparent 45%),
+    radial-gradient(circle at 78% 55%, rgba(0,180,255,.10), transparent 40%),
+    linear-gradient(180deg, rgba(2,6,16,.58) 0%, rgba(3,10,24,.72) 45%, rgba(2,5,14,.92) 100%);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap{width:min(var(--maxw),92%);margin:0 auto}
+section{position:relative;padding:80px 0}
+.section-head{text-align:center;max-width:780px;margin:0 auto 48px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.7rem;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--light-blue);padding:7px 16px;border-radius:999px;
+  background:rgba(59,130,246,.14);border:1px solid rgba(125,211,252,.35);
+  margin-bottom:16px;
+}
+.eyebrow i{font-size:.68rem}
+.section-head h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:12px;color:#fff}
+.section-head h2 span{color:var(--light-blue)}
+.section-head p{color:var(--text-soft);font-size:1rem;max-width:660px;margin:0 auto}
+.cyber-line{
+  height:2px;width:100%;
+  background:linear-gradient(90deg,transparent,#3B82F6,transparent);
+  box-shadow:0 0 10px #3B82F6;opacity:.5;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 24px;border-radius:13px;
+  font-size:.92rem;font-weight:600;
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease, border-color .3s ease;
+  white-space:nowrap;text-align:center;min-height:48px;
+}
+.btn i{font-size:.92rem}
+.btn-primary{
+  background:linear-gradient(135deg,#1683ff,#0057c7);color:#fff;
+  box-shadow:0 6px 22px rgba(22,131,255,.35);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(22,131,255,.55), 0 0 24px rgba(59,130,246,.45);filter:brightness(1.06)}
+.btn-ghost{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--light-blue);box-shadow:0 0 22px rgba(125,211,252,.4);background:rgba(125,211,252,.18)}
+.btn-wa{
+  background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
+  box-shadow:0 6px 22px rgba(37,211,102,.35);
+}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.55)}
+.btn-sm{padding:9px 15px;font-size:.8rem;min-height:40px;border-radius:11px}
+.btn-block{width:100%}
+:focus-visible{outline:2px solid var(--light-blue);outline-offset:3px;border-radius:8px}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+header{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  width:min(1260px,92%);z-index:1000;
+}
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:13px 28px;border-radius:60px;
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(20px) saturate(1.3);
+  -webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 8px 32px rgba(0,0,0,.42), inset 0 0 12px rgba(255,255,255,.08);
+  transition:background .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+header.scrolled .navbar{
+  background:rgba(255,255,255,.16);
+  border-color:rgba(125,211,252,.42);
+  box-shadow:0 10px 40px rgba(0,0,0,.55), 0 0 24px rgba(59,130,246,.20);
+}
+.brand-logo{display:flex;align-items:center;transition:transform .3s ease}
+.brand-logo:hover{transform:scale(1.03)}
+.brand-title{
+  font-family:'Poppins',sans-serif;
+  font-size:1.06rem;font-weight:700;letter-spacing:1.8px;color:#fff;
+  text-shadow:0 0 12px rgba(125,211,252,.65);
+}
+.nav-menu{display:flex;align-items:center;gap:6px}
+.nav-link{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:30px;
+  color:#c8d6ea;font-size:.89rem;font-weight:500;
+  transition:all .3s ease;border:1px solid transparent;
+}
+.nav-link i{font-size:.95rem;color:#a8b9d0;transition:all .3s ease}
+.nav-link:hover{color:#fff;background:rgba(125,211,252,.16);border-color:rgba(125,211,252,.32)}
+.nav-link:hover i{color:var(--light-blue);transform:translateY(-2px) scale(1.10);filter:drop-shadow(0 0 8px rgba(125,211,252,.9))}
+.nav-link.active{color:#fff;background:rgba(125,211,252,.22);border-color:rgba(125,211,252,.50);box-shadow:0 0 18px rgba(125,211,252,.32)}
+.nav-link.active i{color:var(--light-blue);filter:drop-shadow(0 0 10px rgba(125,211,252,1))}
+.menu-toggle{
+  display:none;font-size:1.3rem;color:#fff;cursor:pointer;
+  padding:8px 12px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+}
+@media (max-width:980px){
+  .menu-toggle{display:block}
+  .nav-menu{
+    position:absolute;top:74px;right:0;width:250px;
+    flex-direction:column;align-items:stretch;
+    background:rgba(10,20,40,.96);
+    backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+    border:1px solid rgba(125,211,252,.32);
+    border-radius:20px;padding:16px;gap:6px;
+    opacity:0;transform:translateY(-12px);pointer-events:none;
+    transition:all .3s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+  }
+  .nav-menu.active{opacity:1;transform:translateY(0);pointer-events:auto}
+  .nav-link{width:100%}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding:150px 0 60px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:60px;align-items:center;
+}
+.hero-visual{
+  position:relative;display:flex;justify-content:center;align-items:center;
+  min-height:400px;
+}
+.logo-glow{
+  position:relative;
+  width:100%;max-width:440px;
+  aspect-ratio:1/1;
+  display:grid;place-items:center;
+  animation:heroFloat 7s ease-in-out infinite;
+}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.logo-glow::before{
+  content:"";position:absolute;inset:8%;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(255,255,255,.35) 0%,
+    rgba(125,211,252,.22) 30%,
+    rgba(59,130,246,.14) 55%,
+    transparent 75%);
+  filter:blur(30px);
+  z-index:-1;
+}
+.logo-glow img{
+  width:100%;height:100%;object-fit:contain;
+  filter:
+    drop-shadow(0 0 22px rgba(255,255,255,.95))
+    drop-shadow(0 0 45px rgba(255,255,255,.70))
+    drop-shadow(0 0 90px rgba(125,211,252,.70))
+    drop-shadow(0 0 140px rgba(59,130,246,.55));
+}
+.hero-content h1{
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:800;letter-spacing:-1.2px;margin-bottom:14px;color:#fff;
+}
+.hero-content h1 span{
+  color:var(--light-blue);
+  text-shadow:0 0 20px rgba(125,211,252,.75), 0 0 45px rgba(59,130,246,.4);
+}
+.hero-sub{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(1rem,2.2vw,1.28rem);
+  font-weight:600;color:#dbeafe;margin-bottom:14px;
+}
+.hero-text{color:var(--text-soft);font-size:1rem;max-width:560px;margin-bottom:30px}
+.hero-btns{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;max-width:640px;
+}
+.hero-btns .btn{padding:13px 14px;font-size:.88rem}
+@media (max-width:1100px){.hero-btns{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}}
+@media (max-width:900px){
+  .hero{padding:125px 0 45px}
+  .hero-grid{grid-template-columns:1fr;gap:42px;text-align:center}
+  .hero-visual{order:1;min-height:300px}
+  .hero-content{order:2}
+  .hero-text{margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center;margin:0 auto}
+  .logo-glow{max-width:300px}
+}
+@media (max-width:600px){
+  .hero-btns{grid-template-columns:1fr}
+  .hero-btns .btn{width:100%}
+  .logo-glow{max-width:240px}
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px}
+.card{
+  padding:28px 24px;border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 28px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.28);
+  transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  min-width:0;
+}
+.card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(125,211,252,.62);
+  box-shadow:0 16px 46px rgba(0,0,0,.45), 0 0 30px rgba(125,211,252,.28);
+}
+.card-icon{
+  width:54px;height:54px;border-radius:15px;
+  display:grid;place-items:center;font-size:1.3rem;
+  background:linear-gradient(135deg,rgba(125,211,252,.32),rgba(59,130,246,.16));
+  border:1px solid rgba(125,211,252,.50);
+  color:var(--light-blue);margin-bottom:16px;
+  box-shadow:0 0 22px rgba(125,211,252,.28);
+}
+.card h3{font-size:1.1rem;margin-bottom:10px;color:#fff}
+.card p{color:var(--text-soft);font-size:.92rem}
+
+/* ============================================================
+   HOW WE WORK — VISUAL PROCESS FLOW (Bug 1 fix)
+   ============================================================ */
+.process-flow{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:14px;
+  padding-top:56px;
+  margin-top:10px;
+}
+.process-flow::before{
+  content:"";
+  position:absolute;
+  top:26px;left:8%;right:8%;
+  height:3px;
+  background:rgba(125,211,252,.16);
+  border-radius:3px;
+}
+.process-flow::after{
+  content:"";
+  position:absolute;
+  top:26px;left:8%;
+  height:3px;width:0;
+  border-radius:3px;
+  background:linear-gradient(90deg,#1683ff,#7dd3fc,#a78bfa);
+  box-shadow:0 0 14px #7dd3fc, 0 0 28px rgba(125,211,252,.6);
+  transition:width 2.2s cubic-bezier(.4,0,.2,1);
+}
+.process-flow.animated::after{width:84%}
+
+.process-step{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:0 6px;z-index:1;
+}
+.step-circle{
+  position:relative;
+  width:54px;height:54px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:1.15rem;color:#fff;
+  background:linear-gradient(135deg,#1683ff,#0057c7);
+  border:3px solid rgba(10,20,40,.85);
+  box-shadow:0 0 20px rgba(22,131,255,.55), inset 0 1px 0 rgba(255,255,255,.25);
+  margin-bottom:16px;
+  transition:transform .35s ease, box-shadow .35s ease;
+  z-index:2;
+}
+.process-step:hover .step-circle{
+  transform:translateY(-4px) scale(1.06);
+  box-shadow:0 0 28px rgba(125,211,252,.85), 0 0 46px rgba(125,211,252,.45), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.step-circle i{filter:drop-shadow(0 0 6px rgba(255,255,255,.6))}
+.step-circle::after{
+  content:"";position:absolute;inset:-6px;
+  border-radius:50%;
+  border:1px solid rgba(125,211,252,.55);
+  opacity:0;
+  animation:stepPulse 2.6s ease-in-out infinite;
+}
+.process-step:nth-child(1) .step-circle::after{animation-delay:0s}
+.process-step:nth-child(2) .step-circle::after{animation-delay:.3s}
+.process-step:nth-child(3) .step-circle::after{animation-delay:.6s}
+.process-step:nth-child(4) .step-circle::after{animation-delay:.9s}
+.process-step:nth-child(5) .step-circle::after{animation-delay:1.2s}
+.process-step:nth-child(6) .step-circle::after{animation-delay:1.5s}
+@keyframes stepPulse{0%,100%{opacity:0;transform:scale(.9)}50%{opacity:.8;transform:scale(1.15)}}
+
+.step-label{
+  font-family:'Poppins',sans-serif;
+  font-size:.68rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--light-blue);
+  margin-bottom:6px;opacity:.85;
+}
+.process-step h4{
+  font-size:.98rem;color:#fff;margin-bottom:8px;
+  font-family:'Poppins',sans-serif;font-weight:600;
+}
+.process-step p{
+  font-size:.82rem;color:var(--text-soft);
+  line-height:1.6;max-width:190px;
+}
+@media (max-width:1080px){
+  .process-flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 14px;padding-top:0}
+  .process-flow::before,.process-flow::after{display:none}
+}
+@media (max-width:640px){
+  .process-flow{
+    grid-template-columns:1fr;gap:26px;
+    padding-top:0;padding-left:56px;position:relative;
+  }
+  .process-flow::before{
+    display:block;
+    top:0;bottom:0;left:26px;right:auto;
+    width:2px;height:auto;
+    background:rgba(125,211,252,.16);
+  }
+  .process-flow::after{
+    display:block;
+    top:0;left:26px;right:auto;
+    width:2px;height:0;
+    background:linear-gradient(180deg,#1683ff,#7dd3fc,#a78bfa);
+    transition:height 2.2s cubic-bezier(.4,0,.2,1);
+  }
+  .process-flow.animated::after{width:2px;height:100%}
+  .process-step{flex-direction:row;align-items:flex-start;text-align:left;gap:16px;padding:0}
+  .step-circle{
+    flex-shrink:0;margin-bottom:0;
+    width:48px;height:48px;font-size:1rem;
+    position:absolute;left:-50px;
+  }
+  .step-body{flex:1}
+  .process-step p{max-width:none}
+}
+
+/* ============================================================
+   ABOUT — ACCORDION
+   ============================================================ */
+.accordion-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
+  gap:16px;
+}
+.acc-item{
+  border-radius:var(--radius-sm);
+  background:var(--glass-white);
+  backdrop-filter:blur(20px) saturate(1.3);
+  -webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 22px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.22);
+  overflow:hidden;transition:all .35s ease;
+}
+.acc-item:hover{border-color:rgba(125,211,252,.55)}
+.acc-item.open{
+  border-color:rgba(125,211,252,.72);
+  box-shadow:0 14px 40px rgba(0,0,0,.42), 0 0 26px rgba(125,211,252,.30);
+}
+.acc-head{
+  display:flex;align-items:center;gap:14px;
+  width:100%;text-align:left;padding:18px 20px;
+  transition:background .3s ease;
+}
+.acc-head:hover{background:rgba(125,211,252,.08)}
+.acc-head .acc-icon{
+  width:48px;height:48px;flex-shrink:0;border-radius:13px;
+  display:grid;place-items:center;font-size:1.15rem;
+  background:linear-gradient(135deg,rgba(125,211,252,.32),rgba(59,130,246,.14));
+  border:1px solid rgba(125,211,252,.50);color:var(--light-blue);
+  box-shadow:0 0 20px rgba(125,211,252,.25);
+}
+.acc-head h3{flex:1;font-size:1rem;color:#fff;margin:0;font-family:'Poppins',sans-serif;font-weight:600}
+.acc-chev{font-size:.85rem;color:var(--light-blue);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.acc-item.open .acc-body{max-height:500px}
+.acc-body-inner{padding:0 20px 22px 82px;color:var(--text-soft);font-size:.92rem;line-height:1.7}
+@media (max-width:520px){.acc-body-inner{padding:0 18px 20px 18px}}
+
+.about-intro{
+  padding:36px 32px;margin-bottom:32px;
+  border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 32px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.about-intro h3{
+  font-size:1.35rem;margin-bottom:16px;color:#fff;
+  display:flex;align-items:center;gap:12px;
+}
+.about-intro h3 i{color:var(--light-blue);font-size:1.1rem}
+.about-intro p{color:var(--text-soft);font-size:.96rem;margin-bottom:14px;line-height:1.75}
+.about-intro p:last-child{margin-bottom:0}
+.about-intro strong{color:var(--light-blue);font-weight:600}
+
+.about-section-title{
+  font-size:1.3rem;color:#fff;margin:0 0 22px;
+  display:flex;align-items:center;gap:12px;
+  font-family:'Poppins',sans-serif;font-weight:700;
+}
+.about-section-title .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#1683ff,#0057c7);
+  font-family:'Poppins',sans-serif;font-size:.85rem;font-weight:700;color:#fff;
+  box-shadow:0 0 18px rgba(22,131,255,.5);
+}
+.about-section-title .text{flex:1}
+.about-section-title .line{
+  flex:1;height:1px;min-width:20px;
+  background:linear-gradient(90deg,rgba(125,211,252,.5),transparent);
+}
+
+.founder-card{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;
+  align-items:flex-start;padding:30px;margin-bottom:44px;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(125,211,252,.18),var(--glass-white));
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid rgba(125,211,252,.45);
+  box-shadow:0 12px 38px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.founder-avatar{
+  width:88px;height:88px;border-radius:22px;
+  display:grid;place-items:center;
+  font-family:'Poppins',sans-serif;font-size:1.9rem;font-weight:700;color:#fff;
+  background:linear-gradient(135deg,#1683ff,#0043a0);
+  box-shadow:0 0 34px rgba(22,131,255,.6);flex-shrink:0;
+}
+.founder-card h3{font-size:1.22rem;margin-bottom:4px;color:#fff}
+.founder-role{color:var(--light-blue);font-weight:600;font-size:.88rem;margin-bottom:12px;display:block}
+.founder-card p{font-size:.92rem;color:var(--text-soft);margin-bottom:10px}
+.founder-card p:last-child{margin-bottom:0}
+.founder-card strong{color:var(--light-blue);font-weight:600}
+@media (max-width:560px){.founder-card{grid-template-columns:1fr;text-align:center}.founder-avatar{margin:0 auto}}
+
+.quote-block{
+  padding:40px 34px;border-radius:var(--radius);text-align:center;
+  background:linear-gradient(135deg,rgba(125,211,252,.20),var(--glass-white));
+  border:1px solid rgba(125,211,252,.48);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  box-shadow:0 18px 55px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.quote-block i{font-size:1.5rem;color:var(--light-blue);opacity:.75;margin-bottom:14px;display:block}
+.quote-block p{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(1.02rem,2.4vw,1.42rem);font-weight:600;color:#eaf3ff;line-height:1.55;
+}
+.quote-block span{display:block;margin-top:14px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--light-blue)}
+
+/* ============================================================
+   SERVICES — PART SELECTOR
+   ============================================================ */
+.part-selector{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));
+  gap:24px;max-width:980px;margin:0 auto;
+}
+.part-card{
+  position:relative;text-align:left;
+  padding:34px 30px;border-radius:24px;
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 14px 42px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.28);
+  transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+  overflow:hidden;min-width:0;cursor:pointer;color:inherit;
+}
+.part-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(circle at 100% 0%, rgba(125,211,252,.30), transparent 55%);
+  opacity:0;transition:opacity .4s ease;pointer-events:none;
+}
+.part-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(125,211,252,.72);
+  box-shadow:0 24px 60px rgba(0,0,0,.5), 0 0 42px rgba(125,211,252,.35);
+}
+.part-card:hover::before{opacity:1}
+.part-icon{
+  width:66px;height:66px;border-radius:18px;
+  display:grid;place-items:center;font-size:1.55rem;
+  background:linear-gradient(135deg,rgba(125,211,252,.38),rgba(59,130,246,.16));
+  border:1px solid rgba(125,211,252,.55);
+  color:var(--light-blue);margin-bottom:20px;
+  box-shadow:0 0 28px rgba(125,211,252,.35);
+}
+.part-card h3{font-size:1.35rem;color:#fff;margin-bottom:10px;font-family:'Poppins',sans-serif}
+.part-card p{font-size:.92rem;color:var(--text-soft);margin-bottom:16px}
+.part-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.part-meta span{
+  font-size:.7rem;font-weight:600;letter-spacing:.6px;
+  padding:6px 12px;border-radius:999px;
+  background:rgba(125,211,252,.20);
+  border:1px solid rgba(125,211,252,.42);
+  color:#dbf1ff;
+}
+.part-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.88rem;font-weight:600;color:var(--light-blue);
+  transition:gap .3s ease, color .3s ease;
+}
+.part-card:hover .part-cta{gap:14px;color:#fff}
+
+/* ============================================================
+   SERVICES — MASTER-DETAIL LAYOUT
+   ============================================================ */
+.services-layout{
+  display:grid;
+  grid-template-columns:340px minmax(0,1fr);
+  gap:22px;align-items:start;
+}
+@media (max-width:960px){.services-layout{grid-template-columns:1fr;gap:16px}}
+
+.svc-sidebar{
+  border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 14px 42px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.28);
+  overflow:hidden;
+  position:sticky;top:100px;
+  max-height:calc(100vh - 130px);
+  overflow-y:auto;
+}
+@media (max-width:960px){.svc-sidebar{position:static;max-height:none}}
+.svc-sidebar::-webkit-scrollbar{width:6px}
+.svc-sidebar::-webkit-scrollbar-thumb{background:rgba(125,211,252,.4);border-radius:6px}
+
+.svc-sidebar-head{
+  padding:20px 22px 16px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(135deg,rgba(125,211,252,.16),transparent);
+}
+.svc-sidebar-head h3{
+  font-size:1.05rem;color:#fff;margin-bottom:4px;
+  display:flex;align-items:center;gap:10px;
+  font-family:'Poppins',sans-serif;font-weight:700;
+}
+.svc-sidebar-head h3 i{color:var(--light-blue);font-size:1rem}
+.svc-sidebar-head p{font-size:.78rem;color:var(--text-soft);letter-spacing:.4px}
+
+.cat-tag{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;text-align:left;padding:14px 18px;
+  font-size:.9rem;font-weight:600;color:#dbeafe;
+  background:rgba(125,211,252,.06);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:all .25s ease;
+  font-family:'Poppins',sans-serif;
+}
+.cat-tag:hover{background:rgba(125,211,252,.14);color:#fff}
+.cat-tag.active{
+  background:linear-gradient(90deg,rgba(125,211,252,.28),rgba(125,211,252,.10));
+  color:#fff;border-left:3px solid var(--light-blue);padding-left:15px;
+}
+.cat-tag .cat-tag-info{display:flex;align-items:center;gap:12px}
+.cat-tag .cat-tag-info i{color:var(--light-blue);font-size:.95rem;width:18px;text-align:center}
+.cat-tag .count{
+  font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:rgba(125,211,252,.22);color:#dbf1ff;
+}
+.subcat-list{padding:8px 0 8px 8px;background:rgba(0,0,0,.14)}
+.subcat-list[hidden]{display:none}
+.subcat-tag{
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;text-align:left;padding:10px 16px;
+  font-size:.83rem;font-weight:500;color:#c8d6ea;
+  border-radius:8px;margin:2px 6px;
+  transition:all .22s ease;border-left:2px solid transparent;
+}
+.subcat-tag:hover{background:rgba(125,211,252,.10);color:#fff}
+.subcat-tag.active{
+  background:rgba(125,211,252,.18);color:#fff;
+  border-left-color:var(--light-blue);font-weight:600;
+}
+.subcat-tag .sub-count{
+  font-size:.68rem;padding:2px 7px;border-radius:999px;
+  background:rgba(255,255,255,.10);color:#a8b9d0;
+}
+.svc-list{padding:6px 0 12px 18px;background:rgba(0,0,0,.10)}
+.svc-list[hidden]{display:none}
+.svc-list-btn{
+  display:flex;align-items:center;gap:10px;
+  width:100%;text-align:left;padding:9px 14px;
+  font-size:.8rem;font-weight:500;color:#a8b9d0;
+  border-radius:8px;margin:1px 6px;
+  transition:all .22s ease;border-left:2px solid transparent;
+}
+.svc-list-btn:hover{background:rgba(125,211,252,.10);color:#fff}
+.svc-list-btn.active{
+  background:rgba(125,211,252,.22);color:#fff;
+  border-left-color:var(--light-blue);font-weight:600;
+}
+.svc-list-btn .dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--light-blue);flex-shrink:0;opacity:.5;
+}
+.svc-list-btn.active .dot{opacity:1;box-shadow:0 0 8px var(--light-blue)}
+
+.svc-detail{
+  border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 14px 42px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.28);
+  padding:34px 32px;min-height:500px;position:relative;
+}
+@media (max-width:520px){.svc-detail{padding:24px 20px}}
+
+.svc-detail-empty{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;min-height:420px;gap:14px;
+}
+.svc-detail-empty i{font-size:2.6rem;color:var(--light-blue);opacity:.55}
+.svc-detail-empty h3{font-size:1.15rem;color:#fff;font-weight:600}
+.svc-detail-empty p{font-size:.9rem;color:var(--text-soft);max-width:340px}
+
+.svc-detail-head{
+  display:flex;align-items:flex-start;gap:18px;
+  padding-bottom:22px;margin-bottom:22px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.svc-detail-icon{
+  width:64px;height:64px;flex-shrink:0;border-radius:16px;
+  display:grid;place-items:center;font-size:1.5rem;
+  background:linear-gradient(135deg,rgba(125,211,252,.38),rgba(59,130,246,.16));
+  border:1px solid rgba(125,211,252,.55);color:var(--light-blue);
+  box-shadow:0 0 26px rgba(125,211,252,.30);
+}
+.svc-detail-head-text{flex:1;min-width:0}
+.svc-detail-cat{
+  font-size:.7rem;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--light-blue);
+  margin-bottom:6px;display:block;
+}
+.svc-detail-head h3{font-size:1.4rem;color:#fff;margin-bottom:8px;font-family:'Poppins',sans-serif}
+.svc-detail-price{
+  display:inline-block;font-family:'Poppins',sans-serif;
+  font-size:1.2rem;font-weight:700;color:var(--light-blue);
+  padding:6px 14px;border-radius:10px;
+  background:rgba(125,211,252,.16);
+  border:1px solid rgba(125,211,252,.42);
+}
+@media (max-width:520px){.svc-detail-head{flex-direction:column;align-items:flex-start}}
+
+.svc-detail-desc{
+  font-size:.96rem;color:var(--text-red);line-height:1.8;
+  margin-bottom:26px;padding:20px 22px;border-radius:14px;
+  background:rgba(255,107,122,.08);
+  border:1px solid rgba(255,107,122,.22);
+}
+.svc-detail-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.part-view{margin-top:8px}
+.view-header{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:14px;margin-bottom:22px;
+  padding:14px 20px;border-radius:18px;
+  background:var(--glass-white);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 8px 22px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.22);
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:12px;
+  font-size:.83rem;font-weight:600;color:#dbf1ff;
+  background:rgba(125,211,252,.18);
+  border:1px solid rgba(125,211,252,.42);
+  transition:all .3s ease;
+}
+.back-btn:hover{
+  background:rgba(125,211,252,.30);color:#fff;
+  transform:translateX(-3px);border-color:rgba(125,211,252,.72);
+}
+.breadcrumb{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-size:.8rem;color:#a8b9d0;letter-spacing:.4px;
+}
+.breadcrumb b{color:var(--light-blue);font-weight:600}
+.breadcrumb i{font-size:.62rem;color:#6a7b95}
+
+/* ============================================================
+   PACKAGES — FIXED WIDTH GRID (Bug 2 fix)
+   ============================================================ */
+.pkg-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px;
+  align-items:stretch;
+}
+@media (max-width:1080px){.pkg-grid{grid-template-columns:repeat(2, minmax(0, 1fr))}}
+@media (max-width:640px){.pkg-grid{grid-template-columns:1fr;gap:18px}}
+
+.pkg-card{
+  display:flex;flex-direction:column;
+  padding:28px 24px;border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 10px 32px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.26);
+  transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  position:relative;overflow:hidden;min-width:0;width:100%;height:100%;
+}
+.pkg-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(125,211,252,.62);
+  box-shadow:0 20px 52px rgba(0,0,0,.45), 0 0 32px rgba(125,211,252,.30);
+}
+.pkg-card.featured{
+  background:linear-gradient(155deg,rgba(125,211,252,.28),var(--glass-white));
+  border-color:rgba(125,211,252,.65);
+  box-shadow:0 20px 55px rgba(0,0,0,.45), 0 0 42px rgba(125,211,252,.30);
+}
+.pkg-badge{
+  position:absolute;top:16px;right:16px;
+  font-size:.62rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  padding:6px 12px;border-radius:999px;
+  background:linear-gradient(135deg,#1683ff,#0057c7);color:#fff;
+  box-shadow:0 0 18px rgba(22,131,255,.6);
+}
+.pkg-name{
+  font-size:1.24rem;font-weight:700;color:#fff;
+  margin-bottom:6px;font-family:'Poppins',sans-serif;
+  padding-right:80px;
+}
+.pkg-price{
+  font-family:'Poppins',sans-serif;font-size:1.75rem;font-weight:800;
+  color:var(--light-blue);margin-bottom:4px;line-height:1.1;
+}
+.pkg-price small{font-size:.78rem;font-weight:500;color:var(--text-soft)}
+.pkg-tagline{
+  font-size:.85rem;color:var(--text-soft);margin-bottom:18px;min-height:42px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.pkg-progress{margin-bottom:18px}
+.pkg-progress-head{
+  display:flex;justify-content:space-between;
+  font-size:.7rem;font-weight:600;color:#c8d6ea;margin-bottom:6px;letter-spacing:.4px;
+}
+.pkg-progress-head b{color:var(--light-blue)}
+.progress-track{
+  height:9px;width:100%;border-radius:999px;overflow:hidden;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);
+}
+.progress-fill{
+  height:100%;width:0;border-radius:999px;
+  background:linear-gradient(90deg,#1683ff,#7dd3fc,#a78bfa);
+  box-shadow:0 0 14px rgba(125,211,252,.8);
+  transition:width 1.6s cubic-bezier(.4,0,.2,1);
+  will-change:width;
+}
+.pkg-features{flex:1;margin-bottom:20px}
+.pkg-features li{
+  display:flex;gap:9px;align-items:flex-start;
+  font-size:.84rem;color:var(--text-soft);margin-bottom:8px;line-height:1.55;
+}
+.pkg-features li i{color:#4ade80;font-size:.7rem;margin-top:5px;flex-shrink:0}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:28px;align-items:start;
+}
+@media (max-width:940px){.contact-grid{grid-template-columns:1fr}}
+.form-card{
+  padding:30px 28px;border-radius:var(--radius);
+  background:var(--glass-white);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:1px solid var(--glass-border);
+  box-shadow:0 10px 32px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.26);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:600px){.form-row{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+.field label{
+  display:block;font-size:.78rem;font-weight:600;color:#dbf1ff;
+  margin-bottom:6px;letter-spacing:.3px;
+}
+.field label span{color:#ff8a95}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 14px;border-radius:12px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff;font-size:.88rem;font-family:inherit;
+  transition:all .3s ease;
+}
+.field textarea{resize:vertical;min-height:100px}
+.field select option{background:#0a1b31;color:#fff}
+.field input::placeholder,.field textarea::placeholder{color:#95a8c2}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--light-blue);
+  background:rgba(125,211,252,.12);
+  box-shadow:0 0 22px rgba(125,211,252,.28);
+}
+.hp-field{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+.contact-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.contact-item{
+  display:flex;gap:14px;align-items:center;
+  padding:18px 20px;border-radius:16px;
+  background:var(--glass-white);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 8px 22px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.22);
+  transition:all .3s ease;min-width:0;
+}
+.contact-item:hover{
+  transform:translateY(-4px);border-color:rgba(125,211,252,.6);
+  box-shadow:0 14px 38px rgba(0,0,0,.4), 0 0 24px rgba(125,211,252,.28);
+}
+.contact-item .ci-icon{
+  width:46px;height:46px;flex-shrink:0;border-radius:13px;
+  display:grid;place-items:center;font-size:1.05rem;
+  background:linear-gradient(135deg,rgba(125,211,252,.32),rgba(59,130,246,.12));
+  border:1px solid rgba(125,211,252,.50);color:var(--light-blue);
+}
+.contact-item > div{min-width:0}
+.contact-item h4{
+  font-size:.68rem;letter-spacing:1.6px;text-transform:uppercase;
+  color:#a8b9d0;font-weight:700;margin-bottom:2px;
+}
+.contact-item a,.contact-item p{
+  font-size:.92rem;color:#fff;font-weight:600;word-break:break-word;
+}
+.contact-item a:hover{color:var(--light-blue)}
+
+.social-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
+.social-btn{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  font-size:1rem;color:#dbf1ff;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.22);
+  transition:all .3s ease;
+}
+.social-btn:hover{
+  color:#fff;transform:translateY(-4px);
+  border-color:rgba(125,211,252,.7);
+  background:rgba(125,211,252,.22);
+  box-shadow:0 0 24px rgba(125,211,252,.45);
+}
+.social-btn.fb:hover{background:rgba(24,119,242,.30);border-color:#1877f2;box-shadow:0 0 24px rgba(24,119,242,.55)}
+.social-btn.ig:hover{background:rgba(225,48,108,.30);border-color:#e1306c;box-shadow:0 0 24px rgba(225,48,108,.55)}
+.social-btn.tg:hover{background:rgba(34,158,217,.30);border-color:#229ED9;box-shadow:0 0 24px rgba(34,158,217,.55)}
+.social-btn.tw:hover{background:rgba(255,255,255,.22);border-color:#fff;box-shadow:0 0 24px rgba(255,255,255,.45)}
+
+/* ============================================================
+   INLINE LEGAL MODALS
+   ============================================================ */
+.legal-modal[hidden]{display:none}
+.legal-modal{position:fixed;inset:0;z-index:3000;display:grid;place-items:center;padding:22px}
+.legal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.legal-panel{position:relative;width:min(720px,100%);max-height:min(80vh,720px);overflow:auto;padding:34px;border-radius:24px;background:rgba(8,20,38,.96);border:1px solid rgba(125,211,252,.45);box-shadow:0 24px 80px rgba(0,0,0,.65),0 0 40px rgba(59,130,246,.22);z-index:1}
+.legal-panel h2{font-size:1.6rem;color:#fff;margin:8px 0 16px}
+.legal-panel p{color:var(--text-soft);font-size:.92rem;line-height:1.8;margin-bottom:14px}
+.legal-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);color:#fff;font-size:1rem}
+.legal-close:hover{background:rgba(125,211,252,.20);border-color:rgba(125,211,252,.55)}
+body.legal-open{overflow:hidden}
+@media(max-width:520px){.legal-panel{padding:28px 20px}.legal-panel h2{font-size:1.35rem}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  margin-top:40px;padding:56px 0 24px;
+  border-top:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(4,10,22,.6),rgba(2,5,14,.95));
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
+  gap:32px;margin-bottom:40px;
+}
+.footer-col h4{
+  font-size:.74rem;letter-spacing:2px;text-transform:uppercase;
+  color:var(--light-blue);margin-bottom:16px;font-weight:700;
+}
+.footer-col p{font-size:.86rem;color:var(--text-soft);margin-bottom:12px}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul a{
+  font-size:.86rem;color:#c8d6ea;transition:all .3s ease;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.footer-col ul a:hover{color:var(--light-blue);transform:translateX(4px)}
+.footer-brand-text{
+  font-family:'Poppins',sans-serif;font-weight:700;
+  letter-spacing:1.6px;font-size:1.04rem;color:#fff;
+  text-shadow:0 0 12px rgba(125,211,252,.6);
+}
+.footer-tagline{color:var(--light-blue);font-weight:600;font-size:.88rem}
+.footer-bottom{
+  padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;
+  font-size:.8rem;color:#95a8c2;
+}
+.footer-bottom-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-bottom-links a{color:#c8d6ea;transition:color .3s ease}
+.footer-bottom-links a:hover{color:var(--light-blue)}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none}
+  .bg-video{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<video class="bg-video" autoplay muted loop playsinline preload="auto"
+  src="https://video.wixstatic.com/video/d47472_58cce06729c54ccb935886c4b3647274/1080p/mp4/file.mp4"></video>
+<div class="bg-tint" aria-hidden="true"></div>
+<div class="bg-dark" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<header id="siteHeader">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="#home" class="brand-logo" aria-label="ATKARI SOLUTIONS home">
+      <span class="brand-title">ATKARI SOLUTIONS</span>
+    </a>
+    <button class="menu-toggle" id="mobileMenu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Home</span></a></li>
+      <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span>About</span></a></li>
+      <li><a href="#services" class="nav-link"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Services</span></a></li>
+      <li><a href="#packages" class="nav-link"><i class="fa-solid fa-box-open" aria-hidden="true"></i><span>Packages</span></a></li>
+      <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-visual reveal">
+        <div class="logo-glow">
+          <img src="https://pictureurl.com/api/storage/file?key=u%2Fanon%2F98331b45-1405-4768-b3f9-2b9628a28bc4-53665.png"
+               alt="ATKARI SOLUTIONS logo" width="440" height="440" />
+        </div>
+      </div>
+      <div class="hero-content reveal">
+        <span class="eyebrow"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Business Solutions</span>
+        <h1>ATKARI <span>SOLUTIONS</span></h1>
+        <p class="hero-sub">Business Solutions for Your Business</p>
+        <p class="hero-text">
+          We understand your business needs, identify problems, and provide practical
+          solutions to help you organize, improve, and develop your business.
+        </p>
+        <div class="hero-btns">
+          <a href="#services" class="btn btn-primary"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Explore Services</a>
+          <button class="btn btn-wa" id="heroWhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</button>
+          <a href="#packages" class="btn btn-ghost"><i class="fa-solid fa-box-open" aria-hidden="true"></i> View Packages</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS INTRO -->
+<section id="solutions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-compass" aria-hidden="true"></i> Our Approach</span>
+      <h2>Solutions Built Around <span>Your Business</span></h2>
+      <p>Every business is different. ATKARI SOLUTIONS understands the business first — before developing any solution.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal"><div class="card-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div><h3>Understand</h3><p>Understand the business, its requirements, problems and available resources before suggesting anything.</p></article>
+      <article class="card reveal"><div class="card-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></div><h3>Plan</h3><p>Research the requirement and create a practical, structured plan based on the actual situation.</p></article>
+      <article class="card reveal"><div class="card-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div><h3>Solve</h3><p>Support implementation, organisation and continuous improvement so the solution actually works.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK — VISUAL FLOW -->
+<section id="how-we-work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Process</span>
+      <h2>How We <span>Work</span></h2>
+      <p>Our working philosophy is based on understanding before action.</p>
+    </div>
+
+    <div class="process-flow" id="processFlow">
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 01</span>
+          <h4>Understand</h4>
+          <p>We first understand the customer's business, requirement, problem and expected result.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-flask" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 02</span>
+          <h4>Research</h4>
+          <p>We research the market, customers, competitors, technology and relevant information.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 03</span>
+          <h4>Analyze</h4>
+          <p>We organise the information and identify the main requirements and opportunities.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-map" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 04</span>
+          <h4>Plan</h4>
+          <p>We create a practical plan based on the customer's actual situation and resources.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 05</span>
+          <h4>Implement</h4>
+          <p>The solution may involve consulting, technology, digital setup, data or process work.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div>
+        <div class="step-body">
+          <span class="step-label">Step 06</span>
+          <h4>Improve</h4>
+          <p>After implementation, the process is reviewed and improved where required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-star" aria-hidden="true"></i> Why Us</span>
+      <h2>Why <span>ATKARI SOLUTIONS?</span></h2>
+      <p>We focus on clarity, practical work and a requirement-based approach.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div><h3>Business-Focused Approach</h3><p>Solutions are designed around how your business actually works.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div><h3>Practical Solutions</h3><p>Understandable and usable actions, not complicated theory.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></div><h3>Requirement-Based Planning</h3><p>Every solution starts from your actual requirement and resources.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i></div><h3>Research-Driven Approach</h3><p>Decisions are supported by research and analysis where required.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><h3>Digital &amp; Technology Support</h3><p>Suitable digital systems applied only where they solve a real need.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div><h3>Flexible Solutions</h3><p>Solutions adapt as your business and requirements change.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div><h3>Organized Working Process</h3><p>A clear process from requirement to review and improvement.</p></div>
+      <div class="card reveal"><div class="card-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div><h3>Continuous Improvement</h3><p>Every project and requirement adds to what we learn and improve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</span>
+      <h2>About <span>ATKARI SOLUTIONS</span></h2>
+      <p>Understand the business. Find the requirement. Build the solution.</p>
+    </div>
+
+    <div class="about-intro reveal">
+      <h3><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Who We Are</h3>
+      <p>ATKARI SOLUTIONS is a business solutions initiative focused on helping businesses understand their needs, organize their work, solve practical problems, and build better systems for growth.</p>
+      <p>Every business is different. A small local shop, a service provider, a startup, an individual professional, and an established organization can have completely different requirements. ATKARI SOLUTIONS works around this gap.</p>
+      <p>Our approach is simple: <strong>understand the business first, identify the actual requirement, develop a practical solution, and help the customer move forward step by step.</strong></p>
+      <p>Our focus is not only on providing a service. We want to understand why the customer needs the service, what problem it should solve, what resources are required, and how the solution can be implemented in a practical way.</p>
+    </div>
+
+    <div class="founder-card reveal">
+      <div class="founder-avatar" aria-hidden="true">VA</div>
+      <div>
+        <h3>Viraj Atkari</h3>
+        <span class="founder-role">Founder — ATKARI SOLUTIONS</span>
+        <p>I am Viraj Atkari, the founder of ATKARI SOLUTIONS. My interest has always been connected with understanding how things work, finding problems, learning different subjects, and creating practical solutions. I have explored areas connected with technology, business, research, design, development, digital systems, psychology, philosophy, and creative work.</p>
+        <p>I started ATKARI SOLUTIONS with the belief that a business does not always need more complexity; it often needs <strong>more clarity, organization, and proper execution.</strong></p>
+      </div>
+    </div>
+
+    <!-- AIMS -->
+    <h3 class="about-section-title reveal">
+      <span class="num">01</span><span class="text">Our Aims</span><span class="line"></span>
+    </h3>
+    <div class="accordion-grid reveal" style="margin-bottom:44px">
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
+          <h3>Understanding Businesses</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Before suggesting a solution, we look at the type of business, its products or services, customers, current methods, available resources, challenges, digital presence, data, operations and future requirements. Understanding comes before planning — we take time to learn how your business actually works so the solution fits your reality, not a generic template.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i></span>
+          <h3>Solving Practical Problems</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Businesses face different types of problems every day — involving customers, operations, marketing, technology, data, planning, resources, financial organization or internal processes. Our aim is to identify the problem clearly and develop a solution around the actual requirement, not a one-size-fits-all approach that ignores the specific context of your business.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-folder-tree" aria-hidden="true"></i></span>
+          <h3>Making Work Organized</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Organization is an important part of business. Information, customer records, financial information, processes, resources, documents, marketing activities and technology can become difficult to manage when they are not properly organized. ATKARI SOLUTIONS aims to help businesses create more structured ways of managing these areas so daily operations run smoothly.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+          <h3>Supporting Digital Development</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Technology is now an important part of many businesses. Our aim is to help businesses understand and use suitable digital solutions where required — websites, digital systems, data organization, technology planning, automation and other digital requirements. The purpose is not to use technology simply because it is available, but to use it when it solves a genuine business requirement.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-universal-access" aria-hidden="true"></i></span>
+          <h3>Creating Accessible Solutions</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">We want business solutions to be understandable and practical for different types of customers. A small business may not have the same resources as a large organization. Therefore, the solution should be considered according to the customer's actual requirement, resources and situation — not according to an abstract standard that ignores real-world constraints.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+          <h3>Continuous Learning</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">ATKARI SOLUTIONS is built around continuous learning. Business, technology, customer behavior, digital platforms and working methods continue to change. Our aim is to keep researching, learning, testing and improving our approach so that what we deliver stays relevant, practical and useful for the businesses we serve.</div></div>
+      </div>
+    </div>
+
+    <!-- GOALS -->
+    <h3 class="about-section-title reveal">
+      <span class="num">02</span><span class="text">Our Goals</span><span class="line"></span>
+    </h3>
+    <div class="accordion-grid reveal" style="margin-bottom:44px">
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
+          <h3>Build a Strong Solutions System</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">We want ATKARI SOLUTIONS to develop into a structured system where customers can approach us for different business requirements. Instead of treating every service as a separate activity, we want to connect research, planning, technology, marketing, customer management, data, finance, resources and operations wherever required.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+          <h3>From Ideas to Action</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Many businesses have ideas but do not always have a clear plan for implementing them. One of our goals is to help convert business ideas into organized steps — researching an idea, understanding the market, developing a business model, organizing resources, planning operations, selecting suitable technology, and creating an implementation direction that the business can actually follow.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
+          <h3>Practical Digital Solutions</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Another goal is to create and support digital solutions that help businesses operate more effectively. This may include websites, digital setup, data systems, automation planning, technology organization and other suitable digital tools. The purpose is to use technology in ways that genuinely help the business, not to add complexity for its own sake.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+          <h3>Long-Term Relationships</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">We do not want every interaction to be limited to one transaction. Our goal is to understand customer businesses well enough that future requirements can also be handled through a structured relationship. When a business changes, its requirements can change too. We want our solutions to be able to adapt with those changes over time.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-diagram-successor" aria-hidden="true"></i></span>
+          <h3>Reliable Working Process</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">A professional solution requires a proper process. Our goal is to develop a working method based on: Requirement → Research → Analysis → Planning → Solution → Implementation → Review → Improvement. This process helps reduce confusion, keeps projects organized, and ensures that every solution is built on understanding rather than assumptions.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-stairs" aria-hidden="true"></i></span>
+          <h3>Grow Step by Step</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">We are not trying to create everything at once. Our goal is to develop ATKARI SOLUTIONS gradually through real customer requirements, practical projects, learning, feedback and improvement. Every project teaches something new, and every customer shows us a different way of working. This gradual growth is part of our identity.</div></div>
+      </div>
+    </div>
+
+    <!-- TARGETS -->
+    <h3 class="about-section-title reveal">
+      <span class="num">03</span><span class="text">Our Targets</span><span class="line"></span>
+    </h3>
+    <div class="accordion-grid reveal" style="margin-bottom:44px">
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+          <h3>Small Businesses</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Small businesses often have limited time, people, technology and resources. We aim to support them with practical solutions such as business planning, digital setup, customer management, marketing strategy, data organization, technology solutions and process improvement — all scaled to fit their actual capacity and budget.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-shop" aria-hidden="true"></i></span>
+          <h3>Local Businesses</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Local shops and service providers can also benefit from organized business and digital systems. We aim to understand their existing work and identify areas where better organization, digital presence, customer management or technology can provide useful support — helping them compete more effectively in a changing market.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+          <h3>Startups &amp; New Businesses</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">People starting a new business may have an idea but may not know how to organize it. ATKARI SOLUTIONS can provide research, planning, business model development, setup guidance, digital planning, resource planning and other business-related support according to the requirement — helping them move from idea to structured execution.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+          <h3>Growing Businesses</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">As a business grows, its existing methods may become difficult to manage. More customers can create more data. More employees can create more coordination requirements. More products or services can create more operational complexity. Our target includes businesses that need better organization and planning while expanding their operations.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span>
+          <h3>Service Providers</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">Professionals and service-based businesses may need support with customer management, marketing, digital presence, business planning, data organization and process improvement. We aim to create solutions according to their individual working model — whether they work alone, with a small team, or through a network of collaborators.</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" aria-expanded="false">
+          <span class="acc-icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span>
+          <h3>Businesses With Specific Problems</h3>
+          <i class="fa-solid fa-chevron-down acc-chev" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">A customer does not always need a complete business package. Sometimes there is only one particular problem. For example, a business may need help organizing customer data, improving a process, planning a digital system, researching a market, organizing resources or understanding a new business requirement. ATKARI SOLUTIONS also focuses on these specific problems.</div></div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal" style="margin-bottom:28px">
+      <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+      <p>Our vision is to build ATKARI SOLUTIONS into a trusted business-solutions platform that helps businesses organize their work, understand their requirements, use suitable technology, solve practical problems, and develop structured plans for their next stage.</p>
+      <span>Our Vision</span>
+    </div>
+
+    <div class="about-intro reveal">
+      <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Our Commitment</h3>
+      <p>We aim to work with clarity, responsibility, confidentiality, practical thinking, and continuous improvement. Business information can be important and sensitive. Therefore, customer information and materials shared for a service are handled responsibly and used only for the purpose of providing the requested solution.</p>
+      <p>We also believe that expectations should remain realistic. Not every problem can be solved instantly, and not every solution will produce the same result for every business. Our responsibility is to understand the requirement, provide a practical approach, communicate clearly, and work toward the requested outcome.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Services</span>
+      <h2>Two <span>Service Lines</span></h2>
+      <p>Business Solutions and Workshop Solutions are two completely separate service lines with different scopes, workflows and pricing.</p>
+    </div>
+
+    <div class="part-selector" id="partSelector">
+      <button class="part-card reveal" data-part="business" aria-label="Open Business Solutions">
+        <div class="part-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+        <h3>Business Solutions</h3>
+        <p>Strategic consulting for new and existing businesses — research, planning, digital setup, operations, finance, marketing, data and problem solving.</p>
+        <div class="part-meta">
+          <span>New Business</span><span>Existing Business</span><span>Consulting</span>
+        </div>
+        <span class="part-cta">Explore Business Solutions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </button>
+
+      <button class="part-card reveal" data-part="workshop" aria-label="Open Workshop Solutions">
+        <div class="part-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+        <h3>Workshop Solutions</h3>
+        <p>Design services and online assistance — logos, posters, business cards, banners, flyers, brochures, social media, thumbnails, presentations and more.</p>
+        <div class="part-meta">
+          <span>Design Services</span><span>Online Services</span><span>Creative</span>
+        </div>
+        <span class="part-cta">Explore Workshop Solutions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </button>
+    </div>
+
+    <div class="part-view" id="servicesView" hidden>
+      <div class="view-header">
+        <button class="back-btn" data-back><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All Services</button>
+        <div class="breadcrumb" id="breadcrumb">
+          <span>Services</span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          <b id="crumbRoot">Business Solutions</b>
+        </div>
+      </div>
+
+      <div class="services-layout">
+        <aside class="svc-sidebar" id="svcSidebar">
+          <div class="svc-sidebar-head">
+            <h3 id="sidebarTitle"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Business Solutions</h3>
+            <p id="sidebarSubtitle">Choose a category to explore services</p>
+          </div>
+          <div id="sidebarContent"></div>
+        </aside>
+
+        <div class="svc-detail" id="svcDetail">
+          <div class="svc-detail-empty">
+            <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+            <h3>Select a Service</h3>
+            <p>Choose a category on the left, then pick a service to see full details, pricing and description.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Packages</span>
+      <h2>Business <span>Packages</span></h2>
+      <p>Choose the level of support that matches your current business stage.</p>
+    </div>
+    <div class="pkg-grid" id="pkgGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</span>
+      <h2>Let's Discuss <span>Your Business</span></h2>
+      <p>Tell us about your business, requirement or problem. We will understand your requirement and discuss the appropriate solution.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="form-card reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label for="fullName">Full Name <span>*</span></label><input type="text" id="fullName" placeholder="Your full name" required /></div>
+          <div class="field"><label for="businessName">Business Name</label><input type="text" id="businessName" placeholder="Your business name" /></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="mobile">Mobile Number <span>*</span></label><input type="tel" id="mobile" placeholder="+91 XXXXX XXXXX" required /></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" placeholder="you@example.com" /></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="businessType">Business Type</label>
+            <select id="businessType">
+              <option value="">Select business type</option>
+              <option>New Business / Startup</option>
+              <option>Local Shop / Retail</option>
+              <option>Service Provider</option>
+              <option>Growing Business</option>
+              <option>Established Organisation</option>
+              <option>Freelancer / Creator</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="requiredService">Required Service</label>
+            <select id="requiredService">
+              <option value="">Select a service</option>
+              <option>Business Solutions</option>
+              <option>Workshop Solutions</option>
+              <option>Business Package</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="budget">Budget Range</label>
+          <select id="budget">
+            <option value="">Select budget range</option>
+            <option>Under ₹500</option>
+            <option>₹500 – ₹1,500</option>
+            <option>₹1,500 – ₹3,000</option>
+            <option>₹3,000 – ₹6,000</option>
+            <option>₹6,000 – ₹10,000</option>
+            <option>₹10,000+</option>
+            <option>Need guidance</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message <span>*</span></label>
+          <textarea id="message" placeholder="Tell us briefly about your business and requirement…" required></textarea>
+        </div>
+        <div class="hp-field" aria-hidden="true">
+          <label for="companyWebsite">Leave this empty</label>
+          <input type="text" id="companyWebsite" tabindex="-1" autocomplete="off" />
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button type="submit" class="btn btn-primary" style="flex:1;min-width:180px"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Request</button>
+          <button type="button" class="btn btn-wa" id="formWhatsApp" style="flex:1;min-width:180px"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</button>
+        </div>
+      </form>
+
+      <aside class="contact-side reveal">
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+          <div><h4>By Call</h4><a href="tel:+919867155113">+91 98671 55113</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+          <div><h4>By WhatsApp</h4><a href="https://wa.me/918291096170" target="_blank" rel="noopener noreferrer">+91 82910 96170</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
+          <div><h4>Founder</h4><p>Viraj Atkari</p></div>
+        </div>
+        <div class="card" style="padding:22px">
+          <h4 style="font-size:.72rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--light-blue);margin-bottom:12px">Follow Us</h4>
+          <div class="social-row">
+            <a class="social-btn fb" href="https://www.facebook.com/share/19fAafRpBy/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a class="social-btn ig" href="https://www.instagram.com/atkari.solutions" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a class="social-btn tg" href="https://t.me/atkarisolutions" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+            <a class="social-btn tw" href="https://x.com/Atkarisolutions" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="quote-block" style="padding:26px 24px;text-align:left">
+          <p style="font-size:1rem">Your Business, Our Solutions.</p>
+          <p style="font-size:.84rem;font-weight:400;color:var(--text-soft);margin-top:12px;font-family:'Inter',sans-serif">
+            ATKARI SOLUTIONS provides practical business solutions to help businesses understand their requirements, solve problems, organize operations, improve digital systems, manage customers, plan effectively, and work toward growth.
+          </p>
+          <span style="text-align:left;display:block">We understand. We research. We plan. We solve it.</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<!-- INLINE LEGAL INFORMATION: keeps the single-file website self-contained -->
+<div class="legal-modal" id="privacyPolicy" hidden role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+  <div class="legal-backdrop" data-legal-close></div>
+  <div class="legal-panel">
+    <button class="legal-close" type="button" aria-label="Close Privacy Policy" data-legal-close><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <span class="eyebrow"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Privacy</span>
+    <h2 id="privacyTitle">Privacy Policy</h2>
+    <p>ATKARI SOLUTIONS uses the information you provide through this website only to understand your enquiry, communicate with you, and provide the requested business solution.</p>
+    <p>Please avoid submitting passwords, payment credentials, government identification numbers, or other information that is not required for your enquiry.</p>
+    <p>Information shared through WhatsApp is handled through WhatsApp's own service and policies. By contacting ATKARI SOLUTIONS, you agree to communicate using the contact method you choose.</p>
+  </div>
+</div>
+
+<div class="legal-modal" id="termsConditions" hidden role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <div class="legal-backdrop" data-legal-close></div>
+  <div class="legal-panel">
+    <button class="legal-close" type="button" aria-label="Close Terms and Conditions" data-legal-close><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <span class="eyebrow"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> Terms</span>
+    <h2 id="termsTitle">Terms &amp; Conditions</h2>
+    <p>ATKARI SOLUTIONS provides business-solution guidance and related services according to the requirement discussed with the customer.</p>
+    <p>Prices, scope, delivery time, revisions, third-party charges, and implementation responsibilities may vary by requirement and will be confirmed before work begins.</p>
+    <p>Information and recommendations are provided for the agreed business requirement. Customers remain responsible for final business, financial, legal, registration, and compliance decisions.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="footer-brand-text">ATKARI SOLUTIONS</span></div>
+        <p class="footer-tagline">Your Business. Our Priority.</p>
+        <p>Business Solutions — research, planning, digital development, management, growth and problem solving.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> About</a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Services</a></li>
+          <li><a href="#packages"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Packages</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Business Solutions</a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Workshop Solutions</a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Design Services</a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right" aria-hidden="true"></i> Online Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="tel:+919867155113"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 98671 55113</a></li>
+          <li><a href="https://wa.me/918291096170" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +91 82910 96170</a></li>
+          <li><a href="https://www.instagram.com/atkari.solutions" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/19fAafRpBy/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</a></li>
+          <li><a href="https://t.me/atkarisolutions" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram</a></li>
+          <li><a href="https://x.com/Atkarisolutions" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> X / Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cyber-line" style="margin-bottom:20px"></div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> ATKARI SOLUTIONS. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#privacyPolicy" data-legal-open="privacyPolicy">Privacy Policy</a>
+        <a href="#termsConditions" data-legal-open="termsConditions">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   SCRIPT
+   ============================================================ */
+const WA_NUMBER = "918291096170";
+const WA_URL = "https://wa.me/" + WA_NUMBER;
+function openWA(msg){
+  const url = WA_URL + "?text=" + encodeURIComponent(msg || "Hello ATKARI SOLUTIONS 👋");
+  const popup = window.open(url, "_blank", "noopener,noreferrer");
+  if(!popup){
+    window.location.href = url;
+  }
+}
+const orderMessage = (name, price, category) =>
+  "Hello ATKARI SOLUTIONS 👋\n\nI would like to place an order for:\n\n"+
+  "📌 *Service:* "+name+"\n🏷️ *Category:* "+category+"\n💰 *Price:* "+price+
+  "\n\nPlease let me know how to proceed. Thank you!";
+
+/* ============================================================
+   BUSINESS DATA
+   ============================================================ */
+const BUSINESS_DATA = {
+  new: {
+    id: "new", label: "New Business Solutions", icon: "fa-rocket",
+    groups: [
+      { id:"research-planning", name:"Research & Planning", icon:"fa-flask",
+        items: [
+          { id:"biz-idea-research", n:"Business Idea & Research", p:"₹499 – ₹1,499", i:"fa-lightbulb",
+            d:"This service is designed for entrepreneurs and aspiring business owners who have an idea but need clarity before investing time and money. We begin by understanding your concept, target audience and goals. Then we conduct structured market research to identify demand, competitors and gaps in the market. You receive a detailed research summary, market snapshot and opportunity analysis. Our goal is to help you make informed decisions with real data instead of assumptions. This service reduces risk and provides a solid foundation for planning your next steps with confidence and direction." },
+          { id:"biz-planning", n:"Business Planning", p:"₹999 – ₹2,499", i:"fa-clipboard-list",
+            d:"This service converts your business idea into a clear, structured and practical plan that you can actually follow. We work with you to define goals, activities, required resources and a step-by-step roadmap. The plan includes milestones, timelines, responsibilities and the key actions needed to move forward. Whether you are launching a new venture or restructuring an existing idea, we ensure the plan reflects your real situation and available resources. You receive a written business plan document, action roadmap and milestone list. The result is clarity, direction and a framework that helps you execute with confidence instead of guessing." },
+          { id:"biz-model", n:"Business Model Development", p:"₹1,499 – ₹3,499", i:"fa-diagram-project",
+            d:"A business model explains how your business creates, delivers and captures value. In this service, we work with you to define your customers, offerings, revenue streams, cost structure and delivery method in a structured format. We use a business model canvas and complementary tools to map every part of your business in one place. You receive a clear business model outline, revenue structure and cost overview. This service is essential for anyone who wants to understand how their business will actually make money and where the key opportunities and risks are. Ideal for startups, new ventures and business pivots." }
+        ]
+      },
+      { id:"setup-identity", name:"Setup & Identity", icon:"fa-rocket",
+        items: [
+          { id:"biz-setup", n:"Business Setup Guidance", p:"₹999 – ₹2,499", i:"fa-rocket",
+            d:"Starting a business involves many small decisions that can quickly become overwhelming. In this service, we guide you through the setup process step by step, covering the order in which things should happen, the tools you need, the systems to put in place and the starting requirements to keep in mind. We plan the setup according to your specific business type, scale and goals. You receive a setup checklist, a list of recommended tools and a clear step-by-step guidance document. This service is ideal for first-time entrepreneurs and anyone who wants to avoid common setup mistakes that cost time, money and momentum." },
+          { id:"biz-registration", n:"Registration & Documentation", p:"₹499 – ₹1,499", i:"fa-file-signature",
+            d:"Business registration and documentation can be confusing, especially for first-time business owners. In this service, we explain the registrations that may apply to your business, the documents you will likely need and the process steps involved. We do not provide legal advice, but we help you understand the landscape so you can take informed next steps with clarity. You receive a document checklist, process guidance and requirement notes tailored to your business type. This service saves you time and reduces confusion, and it helps you prepare properly before you begin the actual registration process on the relevant government or legal portals." },
+          { id:"biz-brand", n:"Brand & Identity Setup", p:"₹999 – ₹2,999", i:"fa-palette",
+            d:"Your brand is what customers remember about your business. In this service, we help you define a consistent brand direction — including brand colours, typography, visual style and basic identity elements. We also provide guidance on how your brand should be used across print, digital and social media. You receive a brand direction document, colour palette, typography guidelines and usage notes. This service is ideal for new businesses that want to look professional and trustworthy from day one. A consistent brand identity helps you stand out, build recognition and communicate quality to your customers across every touchpoint." }
+        ]
+      },
+      { id:"digital-marketing", name:"Digital & Marketing", icon:"fa-globe",
+        items: [
+          { id:"biz-digital-setup", n:"Digital Setup", p:"₹999 – ₹2,999", i:"fa-globe",
+            d:"In today's world, customers search for businesses online before making decisions. In this service, we help you set up a proper basic digital presence — including business profiles, listings, basic pages and essential digital tools. We guide you through what to create, how to set it up correctly and how to keep it updated. You receive a digital presence setup, profile optimization guidance and tool configuration support. This service is ideal for businesses that currently have little or no online presence and want to be discoverable by the customers who are actively looking for them." },
+          { id:"biz-website", n:"Website Development", p:"₹2,999 – ₹9,999+", i:"fa-code",
+            d:"Your website is often the first serious interaction a customer has with your business. In this service, we design and develop a fast, responsive website that represents your business professionally and works smoothly on every device. We focus on clear messaging, easy navigation and conversion-friendly structure. You receive a fully responsive website, mobile optimization, basic SEO setup and guidance on how to keep it updated. Whether you need a simple business site or a more advanced multi-page presence, we build it around your actual requirement. Final pricing depends on scope, page count, features and integrations needed." },
+          { id:"biz-marketing", n:"Marketing Setup", p:"₹999 – ₹2,999", i:"fa-bullhorn",
+            d:"Marketing without direction wastes time and money. In this service, we set up the basic marketing structure your business needs to reach the right customers with the right message. We define your target audience, select the most suitable channels, clarify your core messaging and outline a starting content approach. You receive a marketing plan outline, channel setup and content direction guidance. This service is ideal for businesses that want a clear starting point for their marketing efforts — instead of randomly posting or advertising without a strategy. It helps you focus on what actually reaches and resonates with your ideal customers." }
+        ]
+      },
+      { id:"operations-finance", name:"Operations & Finance", icon:"fa-gears",
+        items: [
+          { id:"biz-sourcing", n:"Product & Resource Sourcing", p:"₹999 – ₹2,999", i:"fa-boxes-stacked",
+            d:"Finding reliable products, materials or suppliers can make or break a new business. In this service, we research suppliers, compare options and shortlist sources that fit your requirement, budget and quality expectations. We look at pricing, reliability, delivery time and other important factors. You receive a supplier shortlist, comparison notes and sourcing direction guidance. This service is ideal for businesses that need to source products or materials but are unsure where to start or how to compare the available options. We help you make an informed sourcing decision instead of relying on guesswork or the first supplier you happen to find." },
+          { id:"biz-customer", n:"Customer Management Setup", p:"₹999 – ₹2,499", i:"fa-users",
+            d:"Losing customers because enquiries are not tracked or followed up is one of the most common problems for small businesses. In this service, we help you set up a proper customer management system — including how you capture enquiries, track them, follow up and maintain customer records. You receive a customer record system, a follow-up process and a tracking method that fits your business. This service is ideal for businesses that currently rely on memory, notebooks or scattered chats to manage customers. A structured system helps you respond faster, follow up consistently and build lasting relationships that translate into repeat business and referrals." },
+          { id:"biz-finance", n:"Financial Planning", p:"₹999 – ₹2,499", i:"fa-indian-rupee-sign",
+            d:"Understanding your numbers is essential for making good business decisions. In this service, we help you structure your pricing, costing, expenses and basic financial planning so you have clarity on how money moves in and out of your business. You receive a financial outline, pricing guidance and an expense structure tailored to your business type. This service is ideal for businesses that are unclear about their actual profitability, pricing strategy or cash flow. With a clear financial picture, you can make better decisions, avoid common pitfalls and plan more confidently for growth and stability in the months ahead." },
+          { id:"biz-ops", n:"Business Operations Setup", p:"₹1,499 – ₹3,999", i:"fa-gears",
+            d:"When daily work depends on memory and improvisation, small problems quickly become big ones. In this service, we build simple operating systems for your business — defining processes, responsibilities and workflow so that daily work runs smoothly and consistently. You receive a process outline, workflow structure and operations checklist. This service is ideal for businesses that are growing and starting to feel the strain of unorganized operations. With clear systems in place, you can delegate more easily, reduce mistakes, onboard new team members faster and create a foundation that supports your business as it scales beyond what you can personally manage alone." }
+        ]
+      }
+    ]
+  },
+  existing: {
+    id: "existing", label: "Existing Business Solutions", icon: "fa-chart-line",
+    groups: [
+      { id:"research-strategy", name:"Research & Strategy", icon:"fa-magnifying-glass-chart",
+        items: [
+          { id:"ex-research", n:"Business Research & Analysis", p:"₹999 – ₹3,499", i:"fa-magnifying-glass-chart",
+            d:"Running a business without clear information about your market, competitors and performance is like navigating without a map. In this service, we research your market conditions, competitors, customers and current business position, then organise the findings into a clear analysis. You receive a research report, competitor analysis and key findings that highlight the most important insights. This service is ideal for businesses that want to make data-informed decisions instead of relying on intuition alone. Whether you are planning a new direction, improving an existing offering or preparing to enter a new segment, the research gives you the clarity you need to move forward." },
+          { id:"ex-problem", n:"Business Problem Solving", p:"₹999 – ₹3,999", i:"fa-puzzle-piece",
+            d:"When a business problem keeps repeating or never fully goes away, there is usually a deeper cause behind it. In this service, we work with you to analyse the problem, identify its underlying causes and develop practical solution options. We do not stop at surface symptoms — we look at the processes, decisions, resources and habits that contribute to the problem. You receive a problem analysis, solution options and action direction guidance. This service is ideal for businesses that are stuck on a specific recurring issue. Rather than patching over it again, we help you understand it and move toward a practical, lasting solution." },
+          { id:"ex-marketing", n:"Marketing Strategy", p:"₹999 – ₹3,999", i:"fa-chart-line",
+            d:"Random posting and ad-hoc advertising rarely produces consistent results. In this service, we help you create a clear marketing strategy — starting with a proper understanding of your audience, positioning, channels and messaging. We look at what your business offers, who it serves and how to communicate that effectively. You receive a marketing strategy document, channel plan and content direction. This service is ideal for businesses that are spending time and money on marketing but not seeing the results they want. A clear strategy helps you focus your efforts on the channels and messages that actually reach your ideal customers and drive business growth." },
+          { id:"ex-growth", n:"Business Growth Planning", p:"₹1,499 – ₹4,999", i:"fa-seedling",
+            d:"Growth does not happen by accident — it happens when there is a clear plan, defined goals and a structured set of actions. In this service, we help you create a growth plan for your business's next stage. We define growth goals, identify the requirements, map out a staged action plan and highlight the milestones along the way. You receive a growth plan document, milestone roadmap and requirement list. This service is ideal for businesses that have reached a plateau and want to move forward but are not sure what the next practical step should be. We help you turn ambition into a concrete, actionable direction." }
+        ]
+      },
+      { id:"process-operations", name:"Process & Operations", icon:"fa-arrow-trend-up",
+        items: [
+          { id:"ex-process", n:"Process Improvement", p:"₹1,499 – ₹4,999", i:"fa-arrow-trend-up",
+            d:"Slow, repetitive or inefficient processes silently drain time, money and morale from a business. In this service, we review your existing processes, identify gaps, bottlenecks and unnecessary steps, then restructure them for better efficiency and results. You receive a process review, improvement plan and revised workflow. This service is ideal for businesses that feel like everything takes longer than it should, or where the same problems keep coming back. By improving how your business actually works day to day, you free up time, reduce errors and create more capacity to serve customers and grow — without necessarily adding more people or resources." },
+          { id:"ex-ops-support", n:"Business Operations Support", p:"₹1,499 – ₹4,999", i:"fa-headset",
+            d:"As a business grows, operations become more complex and harder to manage alone. In this service, we provide ongoing support to keep your business operations organised and running smoothly. This can include coordination support, process maintenance, organisation of key activities and day-to-day operational assistance. You receive operations support, coordination help and process maintenance. This service is ideal for business owners who are finding that operations are taking too much of their time and focus, pulling them away from growth activities. With structured support, you can stay focused on the higher-value work while keeping operations stable and consistent." },
+          { id:"ex-resource", n:"Resource Management", p:"₹999 – ₹3,499", i:"fa-layer-group",
+            d:"Time, people, materials and money are the core resources of any business. When they are not managed well, the business feels strained even when revenue is coming in. In this service, we review how your resources are currently being used, then plan better allocation and tracking. You receive a resource plan, allocation structure and tracking method. This service is ideal for businesses that suspect resources are being wasted, mismanaged or simply unaccounted for. With clearer resource management, you can reduce waste, make better use of what you already have, and identify where additional investment would actually make a measurable difference in your operations." },
+          { id:"ex-supply", n:"Product & Supply Solutions", p:"₹1,499 – ₹4,999", i:"fa-truck-fast",
+            d:"Stock issues, supply delays and unreliable vendors can disrupt even a well-run business. In this service, we analyse your sourcing, inventory and supply flow, then recommend practical improvements. We look at how products come in, how they are stored, how they move out and where the bottlenecks are. You receive a supply review, sourcing options and an improvement plan. This service is ideal for retail, product-based and distribution businesses that are dealing with inconsistent supply or inefficient inventory management. Better supply organisation means fewer stockouts, less dead inventory and a smoother experience for your customers." }
+        ]
+      },
+      { id:"digital-tech", name:"Digital & Technology", icon:"fa-microchip",
+        items: [
+          { id:"ex-digital", n:"Digital Transformation", p:"₹1,999 – ₹6,999", i:"fa-microchip",
+            d:"Moving manual business work into suitable digital systems can save time, reduce errors and free your team to focus on higher-value activities. In this service, we identify the areas of your business that are still manual or paper-based, then plan suitable digital tools and systems to replace or support them. You receive a digital roadmap, tool recommendations and an implementation plan. This service is ideal for established businesses that know they need to modernise but are not sure where to begin or which tools are actually right for them. We focus on practical, cost-effective digital improvement rather than unnecessary complexity." },
+          { id:"ex-website-tech", n:"Website & Technology Solutions", p:"₹1,499 – ₹9,999+", i:"fa-laptop-code",
+            d:"Outdated, broken or missing technical systems directly affect how customers perceive and interact with your business. In this service, we develop, fix or upgrade your websites and supporting technical systems — whether that means building a new site, improving an existing one, or setting up tools and integrations your business depends on. You receive a website or system solution, technical setup and maintenance direction. This service is ideal for businesses that have outgrown their current web or technical setup, or that are dealing with recurring technical issues. Final pricing depends on the scope and complexity of the specific requirement." },
+          { id:"ex-automation", n:"Automation Solutions", p:"₹1,999 – ₹9,999+", i:"fa-robot",
+            d:"Repetitive manual tasks consume time, create errors and reduce productivity. In this service, we identify the repetitive tasks in your business, then plan and apply suitable automation using tools that fit your workflow. This can include automating data entry, message responses, report generation, task assignments and other routine activities. You receive an automation plan, tool setup guidance and workflow automation support. This service is ideal for businesses that are handling a growing volume of work with limited resources. Automating the right tasks reduces errors, saves hours of manual work and lets your team focus on the activities that actually need a human touch." }
+        ]
+      },
+      { id:"customer-data-finance", name:"Customer, Data & Finance", icon:"fa-database",
+        items: [
+          { id:"ex-customer", n:"Customer Management", p:"₹999 – ₹3,499", i:"fa-handshake",
+            d:"How you manage and communicate with customers directly affects retention, referrals and revenue. In this service, we help you organise your customer information, improve how you handle enquiries and build a more consistent follow-up system. We also look at retention approaches that keep customers coming back. You receive a customer system setup, follow-up structure and retention approach. This service is ideal for businesses that are experiencing weak follow-up, poor retention or disorganised customer data. With a structured customer management approach, you build stronger relationships, respond faster and turn more one-time customers into repeat and loyal clients." },
+          { id:"ex-data", n:"Data Organization", p:"₹999 – ₹3,499", i:"fa-database",
+            d:"When important information is scattered across notebooks, files, phones and people's memories, the business operates on assumptions rather than facts. In this service, we clean, structure and organise your business data into a usable system — so you can find information quickly, make decisions confidently and keep records consistent. You receive an organised data structure, a record system and usage guidance. This service is ideal for businesses where customer data, financial information, inventory records or operational data have become scattered or inconsistent. Clear data organisation gives you control, saves time and supports better decision-making across every part of your business." },
+          { id:"ex-finance-org", n:"Financial Planning & Organization", p:"₹999 – ₹3,499", i:"fa-wallet",
+            d:"Without a clear picture of profit, expenses and cash flow, business decisions become guesswork. In this service, we help you organise your financial records, set up a tracking method and create a planning structure that gives you real visibility into how your business handles money. You receive a financial structure, a tracking method and a planning outline. This service is ideal for business owners who feel uncertain about their actual financial position. With clearer financial organisation, you can track performance more accurately, plan for taxes and investments more sensibly, and make confident decisions about pricing, spending and growth without relying on rough estimates." }
+        ]
+      }
+    ]
+  }
+};
+
+/* ============================================================
+   WORKSHOP DATA
+   ============================================================ */
+const WORKSHOP_DATA = {
+  design: {
+    id: "design", label: "Design Services", icon: "fa-palette",
+    groups: [
+      { id:"logo", name:"Logo Designing", icon:"fa-pen-nib",
+        d:"A clean, professional logo designed around your brand identity. Delivered in high-resolution PNG, JPG and vector formats, ready for print, web and social media.",
+        items:[
+          ["Simple Logo Designing","₹199"],["Product Logo Designing","₹399"],
+          ["Business Logo Designing","₹499"],["Company Logo Designing","₹799"],
+          ["YouTube / Creator Logo","₹399"],["Gaming Logo Designing","₹599"],
+          ["Minimal Logo Designing","₹299"],["3D Logo Designing","₹999"],
+          ["Mascot Logo Designing","₹1,499"],["Initial Logo Designing","₹299"],
+          ["Emblem Logo Designing","₹599"],["Signature Logo Designing","₹399"],
+          ["Typography Logo Designing","₹399"],["Modern / Abstract Logo","₹699"]
+        ]},
+      { id:"poster", name:"Poster Designing", icon:"fa-image",
+        d:"An eye-catching poster designed to communicate your message clearly and make people stop and look. Delivered in print-ready and social-media-ready formats.",
+        items:[
+          ["Simple Promotional Poster","₹149"],["Business Advertisement Poster","₹199"],
+          ["Sales / Discount Poster","₹249"],["Event Poster","₹199"],
+          ["Festival Poster","₹249"],["Social Media Poster","₹149"],
+          ["Instagram Post Poster","₹149"],["YouTube Community Poster","₹149"],
+          ["Restaurant / Food Poster","₹249"],["Real Estate Poster","₹299"],
+          ["Corporate Poster","₹399"],["Political / Awareness Poster","₹299"],
+          ["Sports Poster","₹299"],["Gaming Poster","₹299"],
+          ["Music / Concert Poster","₹499"],["Movie / Film Poster","₹499"],
+          ["Professional Promotion Poster","₹499"],["Premium Creative Poster","₹499"],
+          ["Educational Poster","₹99"]
+        ]},
+      { id:"card", name:"Business Card", icon:"fa-id-card",
+        d:"A professionally designed business card that makes a strong first impression. Delivered print-ready with proper bleed, margins and resolution.",
+        items:[
+          ["Simple Business Card","₹99"],["Professional Business Card","₹199"],
+          ["Double-Sided Business Card","₹249"],["Premium Business Card","₹399"],
+          ["Minimal Business Card","₹199"],["Corporate Business Card","₹299"],
+          ["Creative Business Card","₹299"],["Luxury Business Card","₹499"],
+          ["QR Code Business Card","₹299"],["Personal / Visiting Card","₹149"],
+          ["Digital Business Card","₹299"],["Real Estate Business Card","₹299"],
+          ["Restaurant Business Card","₹249"],["Freelancer / Creator Card","₹149"],
+          ["3D / Mockup Business Card","₹399"]
+        ]},
+      { id:"banner", name:"Banner Designing", icon:"fa-flag",
+        d:"A professionally designed banner sized correctly for print, web or social media. Clear layout, strong hierarchy and readable at any scale.",
+        items:[
+          ["Simple Banner","₹199"],["Business Banner","₹299"],
+          ["Product Advertisement Banner","₹349"],["Website Banner","₹299"],
+          ["Social Media Banner","₹199"],["YouTube Channel Banner","₹299"],
+          ["Event Banner","₹349"],["Festival Banner","₹299"],
+          ["Sales / Discount Banner","₹349"],["Restaurant / Food Banner","₹399"],
+          ["Real Estate Banner","₹499"],["Corporate Banner","₹399"],
+          ["Promotional Banner","₹399"],["Gaming Banner","₹399"],
+          ["Professional Creative Banner","₹599"]
+        ]},
+      { id:"flyer", name:"Flyer Designing", icon:"fa-file-lines",
+        d:"A well-structured flyer designed to deliver your message quickly and encourage action. Print-ready and digital versions available.",
+        items:[
+          ["Simple Flyer","₹149"],["Business Flyer","₹249"],
+          ["Product Flyer","₹299"],["Promotional Flyer","₹249"],
+          ["Event Flyer","₹299"],["Festival Flyer","₹249"],
+          ["Sales / Discount Flyer","₹249"],["Restaurant / Food Flyer","₹299"],
+          ["Real Estate Flyer","₹349"],["Educational Flyer","₹249"],
+          ["Corporate Flyer","₹399"],["Service Advertisement Flyer","₹299"],
+          ["Event / Party Flyer","₹249"],["Professional Creative Flyer","₹349"],
+          ["Double-Sided Flyer","₹499"]
+        ]},
+      { id:"brochure", name:"Brochure Designing", icon:"fa-book-open",
+        d:"A professionally designed brochure that presents your business, services or products in a clear and organised way. Print-ready layout with proper structure.",
+        items:[
+          ["Simple Brochure","₹299"],["Business Brochure","₹499"],
+          ["Service Brochure","₹499"],["Restaurant / Menu Brochure","₹499"],
+          ["Corporate Brochure","₹499"],["Tri-Fold Brochure","₹499"],
+          ["Bi-Fold Brochure","₹499"],["Multi-Page Brochure","₹999"],
+          ["Premium Brochure","₹1,499"]
+        ]},
+      { id:"social", name:"Social Media Post", icon:"fa-hashtag",
+        d:"A scroll-stopping social media post designed to match your brand and increase engagement. Sized correctly for the platform of your choice.",
+        items:[
+          ["Simple Social Post","₹99"],["Instagram Post","₹149"],
+          ["Facebook Post","₹149"],["Promotional Post","₹149"],
+          ["Product Post","₹199"],["Festival Post","₹149"],
+          ["Business / Service Post","₹199"],["Quote Post","₹99"],
+          ["Educational Post","₹149"],["Professional Creative Post","₹299"]
+        ]},
+      { id:"thumbnail", name:"YouTube Thumbnail", icon:"fa-youtube",
+        d:"A high click-through thumbnail designed to make your video stand out in search and suggested feeds. Bold, readable and platform-optimised.",
+        items:[
+          ["Simple Thumbnail","₹99"],["Gaming Thumbnail","₹149"],
+          ["Vlog Thumbnail","₹149"],["Educational Thumbnail","₹149"],
+          ["News / Information Thumbnail","₹149"],["Podcast Thumbnail","₹149"],
+          ["Click-Focused Thumbnail","₹249"],["Premium Thumbnail","₹299"]
+        ]},
+      { id:"presentation", name:"Presentation Design", icon:"fa-display",
+        d:"A clean, structured presentation designed to communicate your content professionally. Consistent layout, clear hierarchy and readable slides.",
+        items:[
+          ["Simple Presentation","₹299"],["School / College Presentation","₹399"],
+          ["Business Presentation","₹599"],["Corporate Presentation","₹999"],
+          ["Product Presentation","₹699"],["Pitch Deck Presentation","₹999"],
+          ["Project Presentation","₹999"],["Professional Presentation","₹1,499"]
+        ]},
+      { id:"certificate", name:"Certificate Design", icon:"fa-award",
+        d:"A professionally designed certificate that looks official and well-presented. Print-ready with correct sizing and clean typography.",
+        items:[
+          ["Simple Certificate","₹99"],["School Certificate","₹149"],
+          ["College Certificate","₹149"],["Course Certificate","₹199"],
+          ["Achievement Certificate","₹199"],["Participation Certificate","₹149"],
+          ["Corporate Certificate","₹299"],["Premium Certificate","₹299"]
+        ]},
+      { id:"invitation", name:"Invitation Card", icon:"fa-envelope-open-text",
+        d:"An elegant invitation card designed for your occasion, with clean typography and balanced layout. Print-ready and digital versions available.",
+        items:[
+          ["Simple Invitation","₹149"],["Birthday Invitation","₹149"],
+          ["Wedding Invitation","₹399"],["Engagement Invitation","₹299"],
+          ["Anniversary Invitation","₹249"],["Party Invitation","₹199"],
+          ["Festival Invitation","₹199"],["School / College Invitation","₹299"],
+          ["Digital Invitation","₹249"],["Premium Invitation","₹499"]
+        ]},
+      { id:"photo", name:"Photo Editing", icon:"fa-wand-magic-sparkles",
+        d:"Professional photo editing to improve how your images look and feel. Clean results delivered in high resolution, ready to publish.",
+        items:[
+          ["Basic Photo Editing","₹49"],["Background Removal","₹49"],
+          ["Background Change","₹99"],["Photo Retouching","₹149"],
+          ["Colour Correction","₹99"],["Object Removal","₹149"],
+          ["Photo Restoration","₹299"],["Creative Photo Manipulation","₹299"],
+          ["Product Photo Editing","₹149"],["Professional Photo Editing","₹399"],
+          ["Advanced Photo Manipulation","₹599"]
+        ]}
+    ]
+  },
+  online: {
+    id: "online", label: "Online Services", icon: "fa-laptop",
+    groups: [
+      { id:"online-all", name:"Online Assistance", icon:"fa-laptop",
+        d:"Quick, reliable online assistance for everyday digital tasks. Handled accurately and delivered on time so you can focus on your business.",
+        items:[
+          ["Online Form Filling","₹50"],["Online Application Assistance","₹50"],
+          ["Document Upload Assistance","₹30"],["PDF to Word Conversion","₹30"],
+          ["Word to PDF Conversion","₹30"],["PDF Merge / Split","₹20"],
+          ["PDF Compression","₹20"],["Document Typing","₹30 / page"],
+          ["English Typing","₹30 / page"],["Marathi Typing","₹30 / page"],
+          ["Hindi Typing","₹30 / page"],["Resume / CV Making","₹199"],
+          ["Resume / CV Formatting","₹99"],["Email Creation Assistance","₹50"],
+          ["Data Entry","₹75 / hour"],["Research Data Collection","₹150 / hour"],
+          ["File Format Conversion","₹30"]
+        ]}
+    ]
+  }
+};
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let currentPart = null;
+let currentMainCat = null;
+let currentGroup = null;
+let currentService = null;
+
+function getData(){
+  if(currentPart === "business") return BUSINESS_DATA[currentMainCat];
+  if(currentPart === "workshop") return WORKSHOP_DATA[currentMainCat];
+  return null;
+}
+
+function normalizeService(item, group){
+  if(Array.isArray(item)){
+    return {
+      id: group.id + "-" + item[0].toLowerCase().replace(/[^a-z0-9]+/g,"-"),
+      n: item[0], p: item[1], i: group.icon, d: group.d, group: group.name
+    };
+  }
+  return { ...item, group: group.name };
+}
+
+/* ============================================================
+   RENDER SIDEBAR
+   ============================================================ */
+function renderSidebar(){
+  const sidebarContent = document.getElementById("sidebarContent");
+  const data = getData();
+  if(!data){ sidebarContent.innerHTML = ""; return; }
+
+  const mainCats = (currentPart === "business")
+    ? [
+        { id:"new", label:"New Business Solutions", icon:"fa-rocket",
+          count: BUSINESS_DATA.new.groups.reduce((a,g)=>a+g.items.length,0) },
+        { id:"existing", label:"Existing Business Solutions", icon:"fa-chart-line",
+          count: BUSINESS_DATA.existing.groups.reduce((a,g)=>a+g.items.length,0) }
+      ]
+    : [
+        { id:"design", label:"Design Services", icon:"fa-palette",
+          count: WORKSHOP_DATA.design.groups.reduce((a,g)=>a+g.items.length,0) },
+        { id:"online", label:"Online Services", icon:"fa-laptop",
+          count: WORKSHOP_DATA.online.groups.reduce((a,g)=>a+g.items.length,0) }
+      ];
+
+  let html = "";
+  mainCats.forEach(mc => {
+    const isActive = currentMainCat === mc.id;
+    const catData = (currentPart === "business") ? BUSINESS_DATA[mc.id] : WORKSHOP_DATA[mc.id];
+
+    html += `
+      <button class="cat-tag ${isActive ? "active" : ""}" data-main-cat="${mc.id}">
+        <span class="cat-tag-info">
+          <i class="fa-solid ${mc.icon}" aria-hidden="true"></i>
+          <span>${mc.label}</span>
+        </span>
+        <span class="count">${mc.count}</span>
+      </button>`;
+
+    if(isActive && catData){
+      html += `<div class="subcat-list" data-subcat-list="${mc.id}">`;
+      catData.groups.forEach(g => {
+        const isGroupActive = currentGroup === g.id;
+        html += `
+          <button class="subcat-tag ${isGroupActive ? "active" : ""}" data-group="${g.id}">
+            <span>${g.name}</span>
+            <span class="sub-count">${g.items.length}</span>
+          </button>`;
+
+        if(isGroupActive){
+          html += `<div class="svc-list" data-svc-list="${g.id}">`;
+          g.items.forEach(it => {
+            const svc = normalizeService(it, g);
+            const isSvcActive = currentService === svc.id;
+            html += `
+              <button class="svc-list-btn ${isSvcActive ? "active" : ""}" data-service-id="${svc.id}">
+                <span class="dot"></span>
+                <span>${svc.n}</span>
+              </button>`;
+          });
+          html += `</div>`;
+        }
+      });
+      html += `</div>`;
+    }
+  });
+
+  sidebarContent.innerHTML = html;
+}
+
+/* ============================================================
+   RENDER DETAIL
+   ============================================================ */
+function renderDetail(){
+  const detail = document.getElementById("svcDetail");
+
+  if(!currentService){
+    detail.innerHTML = `
+      <div class="svc-detail-empty">
+        <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+        <h3>Select a Service</h3>
+        <p>Choose a category on the left, then pick a service to see full details, pricing and description.</p>
+      </div>`;
+    return;
+  }
+
+  const data = getData();
+  if(!data) return;
+
+  let found = null, foundGroup = null;
+  for(const g of data.groups){
+    for(const it of g.items){
+      const svc = normalizeService(it, g);
+      if(svc.id === currentService){ found = svc; foundGroup = g; break; }
+    }
+    if(found) break;
+  }
+
+  if(!found){
+    detail.innerHTML = `
+      <div class="svc-detail-empty">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        <h3>Service not found</h3>
+        <p>Please select another service from the list.</p>
+      </div>`;
+    return;
+  }
+
+  detail.innerHTML = `
+    <div class="svc-detail-head">
+      <div class="svc-detail-icon"><i class="fa-solid ${found.i}" aria-hidden="true"></i></div>
+      <div class="svc-detail-head-text">
+        <span class="svc-detail-cat">${foundGroup.name}</span>
+        <h3>${found.n}</h3>
+        <span class="svc-detail-price">${found.p}</span>
+      </div>
+    </div>
+    <div class="svc-detail-desc">${found.d}</div>
+    <div class="svc-detail-actions">
+      <button class="btn btn-wa" data-order-name="${found.n}" data-order-price="${found.p}" data-order-cat="${foundGroup.name}">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Order on WhatsApp
+      </button>
+      <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Send Enquiry</a>
+    </div>`;
+}
+
+/* ============================================================
+   PART SELECTOR
+   ============================================================ */
+const partSelector = document.getElementById("partSelector");
+const servicesView = document.getElementById("servicesView");
+const sidebarTitle = document.getElementById("sidebarTitle");
+const sidebarSubtitle = document.getElementById("sidebarSubtitle");
+const crumbRoot = document.getElementById("crumbRoot");
+
+partSelector.addEventListener("click", e => {
+  const card = e.target.closest("[data-part]");
+  if(!card) return;
+  const part = card.dataset.part;
+  currentPart = part;
+  currentMainCat = (part === "business") ? "new" : "design";
+  currentGroup = null;
+  currentService = null;
+
+  partSelector.hidden = true;
+  servicesView.hidden = false;
+
+  if(part === "business"){
+    sidebarTitle.innerHTML = '<i class="fa-solid fa-briefcase" aria-hidden="true"></i> Business Solutions';
+    sidebarSubtitle.textContent = "Choose a category to explore services";
+    crumbRoot.textContent = "Business Solutions";
+  } else {
+    sidebarTitle.innerHTML = '<i class="fa-solid fa-palette" aria-hidden="true"></i> Workshop Solutions';
+    sidebarSubtitle.textContent = "Choose a category to explore services";
+    crumbRoot.textContent = "Workshop Solutions";
+  }
+
+  renderSidebar();
+  renderDetail();
+  servicesView.scrollIntoView({ behavior:"smooth", block:"start" });
+});
+
+document.addEventListener("click", e => {
+  const back = e.target.closest("[data-back]");
+  if(!back) return;
+  servicesView.hidden = true;
+  partSelector.hidden = false;
+  currentPart = null;
+  currentMainCat = null;
+  currentGroup = null;
+  currentService = null;
+  partSelector.scrollIntoView({ behavior:"smooth", block:"start" });
+});
+
+document.getElementById("sidebarContent").addEventListener("click", e => {
+  const mainBtn = e.target.closest("[data-main-cat]");
+  if(mainBtn){
+    currentMainCat = mainBtn.dataset.mainCat;
+    currentGroup = null;
+    currentService = null;
+    renderSidebar();
+    renderDetail();
+    return;
+  }
+  const groupBtn = e.target.closest("[data-group]");
+  if(groupBtn){
+    currentGroup = groupBtn.dataset.group;
+    currentService = null;
+    renderSidebar();
+    renderDetail();
+    return;
+  }
+  const svcBtn = e.target.closest("[data-service-id]");
+  if(svcBtn){
+    currentService = svcBtn.dataset.serviceId;
+    renderSidebar();
+    renderDetail();
+    if(window.innerWidth < 960){
+      document.getElementById("svcDetail").scrollIntoView({ behavior:"smooth", block:"start" });
+    }
+    return;
+  }
+});
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-order-name]");
+  if(!btn) return;
+  e.stopPropagation();
+  openWA(orderMessage(btn.dataset.orderName, btn.dataset.orderPrice, btn.dataset.orderCat));
+});
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+document.querySelectorAll(".acc-head").forEach(head => {
+  head.addEventListener("click", () => {
+    const item = head.closest(".acc-item");
+    const isOpen = item.classList.contains("open");
+    item.classList.toggle("open", !isOpen);
+    head.setAttribute("aria-expanded", !isOpen ? "true" : "false");
+  });
+});
+
+/* ============================================================
+   PACKAGES
+   ============================================================ */
+const PACKAGES = [
+  { name:"Trial", price:"₹499", unit:"One-time", level:20, featured:false,
+    tagline:"Understand your business needs with our expert guidance.",
+    features:["Business requirement discussion","Basic problem identification",
+      "Basic business analysis","1 practical solution / action plan","Short consultation report"]},
+  { name:"Normal", price:"₹1,499", unit:"/ month", level:36, featured:false,
+    tagline:"Steady support for your business with essential solutions.",
+    features:["Business research & basic analysis","Business planning","Documentation guidance",
+      "Basic digital setup guidance","Basic customer-management guidance","Monthly consultation"]},
+  { name:"Growth", price:"₹2,999", unit:"/ month", level:55, featured:true,
+    tagline:"Complete support to grow your business with smarter strategies and better systems.",
+    features:["Everything in Normal Package","Business model improvement","Marketing strategy",
+      "Customer management","Data organization","Financial organization","Growth planning","More detailed reports"]},
+  { name:"Business Pro", price:"₹5,999", unit:"/ month", level:72, featured:false,
+    tagline:"Advanced solutions for sustainable growth and long-term success.",
+    features:["Everything in Growth Package","Business process improvement","Brand & identity solutions",
+      "Digital & technology solutions","Business problem solving","Resource & supply planning",
+      "Automation planning","Regular progress review"]},
+  { name:"Business Advance", price:"₹9,999", unit:"/ month", level:88, featured:false,
+    tagline:"Advanced solutions for bigger goals and long-term success.",
+    features:["Everything in Business Pro","Advanced business research","Detailed business planning",
+      "Advanced process optimization","Data / technology planning","Automation implementation support",
+      "Financial planning & organization","Marketing planning","Priority support"]},
+  { name:"Business Ultra Pro", price:"₹18,999", unit:"/ month", level:100, featured:false,
+    tagline:"Complete business support. Advanced solutions. Maximum growth.",
+    features:["Everything in Business Advance","Comprehensive business analysis",
+      "Multi-department solution planning","Advanced automation solutions","Business operations planning",
+      "Customer + Marketing + Data coordination","Resource / supply coordination",
+      "Strategic business planning","Priority consultation","Monthly business review & action plan"]}
+];
+
+function packageCard(p){
+  return `
+    <article class="pkg-card ${p.featured ? "featured" : ""} reveal">
+      ${p.featured ? '<span class="pkg-badge">Most Chosen</span>' : ""}
+      <h3 class="pkg-name">${p.name}</h3>
+      <div class="pkg-price">${p.price} <small>${p.unit}</small></div>
+      <p class="pkg-tagline">${p.tagline}</p>
+      <div class="pkg-progress">
+        <div class="pkg-progress-head"><span>Support Level</span><b>${p.level}%</b></div>
+        <div class="progress-track"><div class="progress-fill" data-level="${p.level}"></div></div>
+      </div>
+      <ul class="pkg-features">
+        ${p.features.map(f => `<li><i class="fa-solid fa-check" aria-hidden="true"></i><span>${f}</span></li>`).join("")}
+      </ul>
+      <button class="btn btn-primary btn-block" data-order-package="${p.name}">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Choose Package
+      </button>
+    </article>`;
+}
+document.getElementById("pkgGrid").innerHTML = PACKAGES.map(packageCard).join("");
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-order-package]");
+  if(!btn) return;
+  const p = PACKAGES.find(x => x.name === btn.dataset.orderPackage);
+  if(p) openWA("Hello ATKARI SOLUTIONS 👋\n\nI am interested in the *"+p.name+"* package ("+p.price+" "+p.unit+
+    ").\n\nPlease share the complete details and next steps. Thank you!");
+});
+
+/* ============================================================
+   SCROLL ANIMATIONS — run once
+   ============================================================ */
+function animateProgressBars(){
+  const bars = document.querySelectorAll(".progress-fill");
+  if(!bars.length) return;
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      const bar = entry.target;
+      if(bar.dataset.animated === "true"){ obs.unobserve(bar); return; }
+      bar.dataset.animated = "true";
+      const target = bar.dataset.level + "%";
+      requestAnimationFrame(() => {
+        setTimeout(() => { bar.style.width = target; }, 200);
+      });
+      obs.unobserve(bar);
+    });
+  }, { threshold:0.25, rootMargin:"0px 0px -40px 0px" });
+
+  bars.forEach(b => io.observe(b));
+}
+
+function animateProcessFlow(){
+  const flow = document.getElementById("processFlow");
+  if(!flow) return;
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      if(flow.dataset.animated === "true"){ obs.unobserve(flow); return; }
+      flow.dataset.animated = "true";
+      setTimeout(() => flow.classList.add("animated"), 250);
+      obs.unobserve(flow);
+    });
+  }, { threshold:0.25 });
+
+  io.observe(flow);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+const header = document.getElementById("siteHeader");
+const mobileMenu = document.getElementById("mobileMenu");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
+
+mobileMenu.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("active");
+  mobileMenu.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  mobileMenu.innerHTML = isOpen
+    ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+    : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+});
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+    navMenu.classList.remove("active");
+    mobileMenu.setAttribute("aria-expanded","false");
+    mobileMenu.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+  });
+});
+
+const sections = [...document.querySelectorAll("section[id]")];
+function onScroll(){
+  const y = window.scrollY;
+  header.classList.toggle("scrolled", y > 40);
+  let current = "home";
+  sections.forEach(sec => {
+    if(y >= sec.offsetTop - 180) current = sec.id;
+  });
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href").slice(1);
+    link.classList.toggle("active", href === current);
+  });
+}
+window.addEventListener("scroll", onScroll, { passive:true });
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+function attachReveal(){
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry, i) => {
+      if(entry.isIntersecting){
+        setTimeout(() => entry.target.classList.add("visible"), i * 50);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.10, rootMargin:"0px 0px -40px 0px" });
+  els.forEach(el => io.observe(el));
+}
+
+/* ============================================================
+   HERO WHATSAPP
+   ============================================================ */
+document.getElementById("heroWhatsApp").addEventListener("click", () => {
+  openWA("Hello ATKARI SOLUTIONS 👋\n\nI would like to know more about your business solutions. Please guide me.");
+});
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+const contactForm = document.getElementById("contactForm");
+
+function buildFormMessage(){
+  const v = id => (document.getElementById(id).value || "").trim();
+  return "Hello ATKARI SOLUTIONS 👋\n\n📋 *New Business Enquiry*\n\n"+
+    "👤 *Name:* "+(v("fullName")||"—")+"\n"+
+    "🏢 *Business:* "+(v("businessName")||"—")+"\n"+
+    "📱 *Mobile:* "+(v("mobile")||"—")+"\n"+
+    "✉️ *Email:* "+(v("email")||"—")+"\n"+
+    "🏷️ *Business Type:* "+(v("businessType")||"—")+"\n"+
+    "🛠️ *Required Service:* "+(v("requiredService")||"—")+"\n"+
+    "💰 *Budget:* "+(v("budget")||"—")+"\n\n"+
+    "📝 *Message:*\n"+(v("message")||"—")+"\n\n"+
+    "Please get back to me. Thank you!";
+}
+
+function validateContactForm(){
+  if(document.getElementById("companyWebsite").value !== "") return false;
+  const name = document.getElementById("fullName").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const message = document.getElementById("message").value.trim();
+  if(!name || !mobile || !message){
+    alert("Please fill in your name, mobile number and message.");
+    return false;
+  }
+  if(!/^[0-9+\-\s()]{7,18}$/.test(mobile)){
+    alert("Please enter a valid mobile number.");
+    return false;
+  }
+  return true;
+}
+
+function sendContactWhatsApp(){
+  if(!validateContactForm()) return;
+  openWA(buildFormMessage());
+  contactForm.reset();
+}
+
+contactForm.addEventListener("submit", e => {
+  e.preventDefault();
+  sendContactWhatsApp();
+});
+
+document.getElementById("formWhatsApp").addEventListener("click", sendContactWhatsApp);
+
+/* ============================================================
+   LEGAL LINKS / SINGLE-FILE MODALS
+   ============================================================ */
+document.querySelectorAll("[data-legal-open]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const modal = document.getElementById(link.dataset.legalOpen);
+    if(!modal) return;
+    modal.hidden = false;
+    document.body.classList.add("legal-open");
+    modal.querySelector(".legal-close")?.focus();
+  });
+});
+document.querySelectorAll("[data-legal-close]").forEach(el => {
+  el.addEventListener("click", () => {
+    const modal = el.closest(".legal-modal");
+    if(modal) modal.hidden = true;
+    if(!document.querySelector(".legal-modal:not([hidden])")) document.body.classList.remove("legal-open");
+  });
+});
+document.addEventListener("keydown", e => {
+  if(e.key !== "Escape") return;
+  const modal = document.querySelector(".legal-modal:not([hidden])");
+  if(!modal) return;
+  modal.hidden = true;
+  document.body.classList.remove("legal-open");
+});
+
+/* Graceful fallbacks for optional external media. */
+const bgVideo = document.querySelector(".bg-video");
+if(bgVideo){
+  bgVideo.addEventListener("error", () => { bgVideo.style.display = "none"; }, { once:true });
+}
+const heroLogo = document.querySelector(".logo-glow img");
+if(heroLogo){
+  heroLogo.addEventListener("error", () => { heroLogo.style.display = "none"; }, { once:true });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.getElementById("year").textContent = new Date().getFullYear();
+attachReveal();
+animateProgressBars();
+animateProcessFlow();
+onScroll();
+</script>
+
+</body>
+</html>
